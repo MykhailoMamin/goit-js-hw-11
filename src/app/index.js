@@ -45,7 +45,6 @@ const loadMorePhotos = async function (entries, observer) {
         const markup = createMarkup(hits);
         refs.gallery.insertAdjacentHTML('beforeend', markup);
 
-        // const showMore = pixaby.hasMorePhotos();
         if (pixaby.hasMorePhotos) {
           const lastItem = document.querySelector('.gallery a:last-child');
           observer.observe(lastItem);
@@ -110,8 +109,6 @@ const onSubmitClick = async event => {
     Notify.success(`Hooray! We found ${total} images.`, notifyInit);
 
     if (pixaby.hasMorePhotos) {
-      //refs.btnLoadMore.classList.remove('is-hidden');
-
       const lastItem = document.querySelector('.gallery a:last-child');
       observer.observe(lastItem);
     }
@@ -171,15 +168,15 @@ function scrollPage() {
 
 //Button smooth scroll up
 
-window.addEventListener('scroll', scrollFunction);
+// window.addEventListener('scroll', scrollFunction);
 
-function scrollFunction() {
-  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-    refs.btnUpWrapper.style.display = 'flex';
-  } else {
-    refs.btnUpWrapper.style.display = 'none';
-  }
-}
-refs.btnUp.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// function scrollFunction() {
+//   if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+//     refs.btnUpWrapper.style.display = 'flex';
+//   } else {
+//     refs.btnUpWrapper.style.display = 'none';
+//   }
+// }
+// refs.btnUp.addEventListener('click', () => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// });
